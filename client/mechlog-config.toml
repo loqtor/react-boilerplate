@@ -1,0 +1,8 @@
+[[sources]]
+type="sifter"
+domain="alphero"
+ids=["48819"]
+
+[reference_match]
+regex='fix\(#[0-9]{5}\)'
+remove=false

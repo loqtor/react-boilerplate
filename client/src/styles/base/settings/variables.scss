@@ -1,0 +1,63 @@
+// ============
+// Colours
+// ============
+
+// Brand ============
+$violet:    #9F4585;
+$red:       #e41b13;
+$orange:    #ffa004;
+$blue:      #00a8cc;
+$green:     #6FC03E;
+
+// Name-spacing ============
+$primary:         $green;
+$primary-light:   hsl(hue($primary), saturation($primary), 75%);
+$primary-dark:    hsl(hue($primary), saturation($primary), 25%);
+$secondary:       $orange;
+$secondary-light: hsl(hue($secondary), saturation($secondary), 75%);
+$secondary-dark:  hsl(hue($secondary), saturation($secondary), 25%);
+
+// Tones ============
+$black:      #000;
+$grey-dark:  #4a4a4a;
+$grey-med:   #adadad;
+$grey-light: #cecece;
+$border:     #ececec;
+$off-white:  #fafafa;
+$white:      #fff;
+
+// Text ============
+$text:        $grey-dark;
+$text-light:  $grey-med;
+$link:        $blue;
+$active:      $violet;
+$highlight:   $active;
+
+// Messages ============
+$error:   $red;
+$info:    $blue;
+$success: $green;
+$warning: $orange;
+
+
+// ============
+// Z-indices 
+// ============
+$z-0: 0;
+$z-10: 10;
+$z-20: 20;
+$z-30: 30;
+$z-40: 40;
+$z-50: 50;
+
+
+// ============
+// Form elements
+// ============
+$form-element-height:          40px; // button, select
+$form-element-border-colour:   rgba($black, .25);
+$form-element-border-width:    2px;
+$form-element-border-radius:   3px;
+$form-element-focus-color:     $active;
+$form-element-disabled-color:  transparentize($grey-med, .5);
+$form-element-padding:         $h*2;

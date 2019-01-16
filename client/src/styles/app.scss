@@ -1,0 +1,13 @@
+// ============
+/*! AINTCSS - Alphero Inverted Triangle CSS */
+// ============
+
+// - start with nothing and layer up our specificity
+@import "base/functions/index";    // \•••••••••••••••/  1. functions
+@import "base/settings/index";     //  \•••••••••••••/   2. settings and variables
+@import "base/mixins/index";       //   \•••••••••••/    3. mixins
+@import "base/index";              //     \•••••••/      4. html elements, typography and naturalize
+@import "layout/index";            //      \•••••/       5. layout and layout helpers
+@import "components/index";        //       \•••/        6. designed components / chunks of ui
+@import "utilities/index";         //        \•/         7. helpers and overrides
+@import "print";                   //         •          8. print styles (conditionally included)

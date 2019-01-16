@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`index.test.jsx renders correctly 1`] = `
+<div
+  aria-busy="true"
+  aria-label=""
+  className="Loader"
+  role="progressbar"
+>
+  <div
+    className="Loader-inner"
+  />
+</div>
+`;
+
+exports[`index.test.jsx renders correctly when dot type 1`] = `
+<div
+  aria-busy="true"
+  aria-label=""
+  class="DotLoader"
+  role="progressbar"
+>
+  <div
+    class="DotLoader-dot"
+  />
+  <div
+    class="DotLoader-dot"
+  />
+  <div
+    class="DotLoader-dot"
+  />
+</div>
+`;

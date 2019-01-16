@@ -1,0 +1,57 @@
+// ==========================================
+// COMPILE FONT PLACEHOLDERS - DO NOT EDIT
+// ==========================================
+@each $font-name, $style in $base-font-styles {
+  $uc-font-name: capitalise(#{$font-name});
+  %font-#{$font-name} {
+    font-family: map-get($style, font-family);
+    font-style: map-get($style, font-style);
+    font-weight: map-get($style, font-weight);
+  }
+  .u-text#{$uc-font-name} {
+    @extend %font-#{$font-name};
+  }
+}
+
+// ==========================================
+// COMPILE TYPOGRAPHIC STYLES - DO NOT EDIT
+// ==========================================
+@each $el, $font-tag in $base-font-dimensions {
+  
+  %#{$el} {
+    @if map-has-key($font-tag, font-family) {
+      @if map-has-key($base-font-styles, map-get($font-tag, font-family)) {
+        $family: map-get($font-tag, font-family);
+        @extend %font-#{$family} !optional;
+      } @else {
+        @error "Error in $base-font-dimensions: "+$el+" has invalid font-family '"+map-get($font-tag, font-family)+"'";
+      }
+    }
+    
+    @include font(
+      map-get($font-tag, font-size), 
+      map-get($font-tag, line-height),
+      map-get($font-tag, margin-top), 
+      map-get($font-tag, margin-bottom)
+    );
+  }
+  
+  .#{$el} {
+    @extend %#{$el};
+  }
+  
+  @if (
+    $el == h1 or 
+    $el == h2 or
+    $el == h3 or
+    $el == h4 or
+    $el == h5 or
+    $el == h6 or
+    $el == p or
+    $el == small
+  ) {
+    #{$el} {
+      @extend %#{$el};
+    }
+  }
+}

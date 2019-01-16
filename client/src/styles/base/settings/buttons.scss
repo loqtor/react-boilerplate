@@ -1,0 +1,58 @@
+// ========================
+// BUTTON SETTINGS
+// ========================
+
+
+// ==========================================
+// STEP 1: Set up common variables
+// ==========================================
+$button-height:               40px;
+$button-min-width:            180px;
+$button-border-width:         2px;
+$button-border-radius:        40px;
+$button-disabled-opacity:     0.5;
+$button-horizontal-padding:   $h*2;
+$button-transition-speed:     150ms;
+
+
+// ==========================================
+// STEP 2: Define button modifiers and states
+// ==========================================
+/// @type Map
+/// ============
+/// @prop {String} modifier - button classname modifier
+/// @prop {String} state - ui state e.g focus
+/// @prop {Array} colours - comma separated colour values
+/// ============
+/// <modifier>: (
+///   <state>: (<text>, <background>, <border>)
+/// )
+/// ============
+/// Output classes:
+/// .Button--primary {...}
+/// .Button--secondary {...}
+/// .Button--tertiary {...}
+/// ============
+$button-states: (
+  primary: (
+    default: ($white, $primary, null),
+    focus:   ($white, $primary, null),
+    hover:   ($white, $primary-dark, null),
+    active:  ($white, $primary-dark, null),
+    loading: ($white, $primary-dark, null)
+  ),
+  secondary: (
+    default: ($secondary, $white, $secondary),
+    focus:   ($secondary, $white, $secondary),
+    hover:   ($white, $secondary, $secondary),
+    active:  ($white, $secondary-light, $secondary),
+    loading: ($white, $secondary-light, $secondary)
+  ),
+  tertiary: (
+    default: ($violet, $white, $violet),
+    focus:   ($violet, $white, $violet),
+    hover:   ($white, $violet, $violet),
+    active:  ($white, transparentize($violet, .5), $violet),
+    loading: ($white, transparentize($violet, .5), $violet)
+  ),
+);
