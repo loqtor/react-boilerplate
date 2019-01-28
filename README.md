@@ -208,3 +208,11 @@ Working with any JavaScript framework can be tricky without some ability to insp
 
 - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) is a Chrome DevTools extension for React. It allows you to inspect the React component hierarchies in the Chrome Developer Tools.
 - [Redux DevTools](https://github.com/zalmoxisus/redux-devtools-extension) is a Chrome DevTools extension for Redux. It allows you to inspect that state held in the global Redux store and track / log actions as they happen in the app.
+
+## Browser Support and Polyfills
+
+This project makes use of modern JavaScript features that aren't support in older browsers (e.g. Internet Explorer). Polyfills from the [core-js library](https://github.com/zloirock/core-js) are used to allow the site to run on older browsers (tested in IE 11, other browsers may require further tweaking).
+
+To avoid bloating the build, polyfills are only added for features that are used. To add a polyfill, find the relevant "CommonJS entry point" in the [core-js docs](https://github.com/zloirock/core-js) and add it as an import at the very top of `client/src/index.js`.
+
+CSS features will be automatically prefixed to support the browsers specified in the `browserslist` section of `client/pacakage.json`
