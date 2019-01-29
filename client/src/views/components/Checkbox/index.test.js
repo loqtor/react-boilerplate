@@ -5,7 +5,7 @@ import toJson from 'enzyme-to-json';
 
 import mountToDoc from '../../../tools/utilities/mountToDoc';
 
-import Checkbox from './index';
+import { Checkbox } from './index';
 
 const setup = (render, props) => {
   const onChangeSpy = jest.fn();

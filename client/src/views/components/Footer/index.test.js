@@ -1,41 +1,30 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
 import axe from 'axe-core';
 import toJson from 'enzyme-to-json';
+import { injectIntl } from 'react-intl';
 
 import mountToDoc from '../../../tools/utilities/mountToDoc';
+import { shallowWithIntl } from '../../../tools/utilities/enzymeIntlTestHelper';
 
-import Footer from './index';
+import { Footer } from './index';
+
+const FooterWithIntl = injectIntl(Footer);
 
 const setup = (render, props) => {
-  const toggleSheetSpy = jest.fn();
-
   const defaultProps = {
-    toggleSheet: toggleSheetSpy,
   };
 
-  const component = render(<Footer {...defaultProps} {...props} />);
+  const component = render(<FooterWithIntl {...defaultProps} {...props} />);
 
   return {
     actual: component,
-    toggleSheetSpy,
   };
 };
 
 describe('index.test.jsx', () => {
   it('renders correctly', () => {
-    const { actual } = setup(mount, {});
+    const { actual } = setup(shallowWithIntl, {});
     expect(toJson(actual)).toMatchSnapshot();
-  });
-
-  it('calls toggleSheetSpy correctly', () => {
-    const { actual, toggleSheetSpy } = setup(shallow, {});
-
-    actual
-      .find('.Footer-link')
-      .first()
-      .simulate('click');
-    expect(toggleSheetSpy).toHaveBeenCalledTimes(1);
   });
 
   it('has no accessibility violations', (done) => {

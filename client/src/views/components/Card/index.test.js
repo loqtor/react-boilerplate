@@ -5,7 +5,7 @@ import toJson from 'enzyme-to-json';
 
 import mountToDoc from '../../../tools/utilities/mountToDoc';
 
-import Card from './index';
+import { Card } from './index';
 
 const setup = (render) => {
   const component = render(<Card>Card text </Card>);

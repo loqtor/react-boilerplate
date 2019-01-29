@@ -7,7 +7,7 @@ import { StaticRouter } from 'react-router-dom';
 import shallowToDoc from '../../../tools/utilities/mountToDoc';
 import mockStore from '../../../tools/utilities/mockStore';
 
-import Menu from './index';
+import { Menu } from './index';
 
 const setup = (render, props) => {
   const handleLogoutSpy = jest.fn();
@@ -19,7 +19,7 @@ const setup = (render, props) => {
   };
 
   const component = render(
-    <StaticRouter store={store}>
+    <StaticRouter store={store} context={{}}>
       <Menu {...defaultProps} {...props} />
     </StaticRouter>,
   );

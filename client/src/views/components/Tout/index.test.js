@@ -5,7 +5,7 @@ import toJson from 'enzyme-to-json';
 
 import mountToDoc from '../../../tools/utilities/mountToDoc';
 
-import Tout from './index';
+import { Tout } from './index';
 
 const setup = (render, props) => {
   const defaultProps = {
@@ -63,15 +63,4 @@ describe('<Tout />', () => {
     expect(toJson(actual)).toMatchSnapshot();
     expect(actual.find('.Tout').hasClass('is-open')).toBeFalsy();
   });
-
-  // it('has no accessibility violations', (done) => {
-  //   const { actual } = setup(mountToDoc, {});
-  //   const componentNode = actual.getDOMNode();
-  //
-  //   axe.run(componentNode, (err, { violations }) => {
-  //     expect(err).toBe(null);
-  //     expect(violations).toHaveLength(0);
-  //     done();
-  //   });
-  // });
 });

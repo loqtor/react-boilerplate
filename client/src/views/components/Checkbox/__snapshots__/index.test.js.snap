@@ -4,10 +4,10 @@ exports[`<Checkbox /> renders correctly 1`] = `
 <Checkbox
   className="Checkbox"
   error=""
-  formattedMessageData={null}
   id="Subscribe"
   isChecked={null}
   isDisabled={false}
+  isOptional={false}
   isRTLLabel={false}
   isReadOnly={false}
   isToggle={false}
@@ -49,10 +49,10 @@ exports[`<Checkbox /> renders correctly when an error is present 1`] = `
 <Checkbox
   className="Checkbox"
   error="Required field"
-  formattedMessageData={null}
   id="Subscribe"
   isChecked={null}
   isDisabled={false}
+  isOptional={false}
   isRTLLabel={false}
   isReadOnly={false}
   isToggle={false}
@@ -83,16 +83,16 @@ exports[`<Checkbox /> renders correctly when an error is present 1`] = `
       >
         <span>
           Subscribe to newsletter
+          <div
+            className="Checkbox-error"
+          >
+            <p>
+              Required field
+            </p>
+          </div>
         </span>
       </span>
     </label>
-    <div
-      className="Checkbox-error"
-    >
-      <p>
-        Required field
-      </p>
-    </div>
   </div>
 </Checkbox>
 `;
@@ -101,10 +101,10 @@ exports[`<Checkbox /> renders correctly when is disabled 1`] = `
 <Checkbox
   className="Checkbox"
   error=""
-  formattedMessageData={null}
   id="Subscribe"
   isChecked={null}
   isDisabled={true}
+  isOptional={false}
   isRTLLabel={false}
   isReadOnly={false}
   isToggle={false}
@@ -146,10 +146,10 @@ exports[`<Checkbox /> renders correctly when is isReadOnly 1`] = `
 <Checkbox
   className="Checkbox"
   error=""
-  formattedMessageData={null}
   id="Subscribe"
   isChecked={null}
   isDisabled={false}
+  isOptional={false}
   isRTLLabel={false}
   isReadOnly={true}
   isToggle={false}
