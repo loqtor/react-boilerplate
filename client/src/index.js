@@ -1,3 +1,8 @@
+import 'react-app-polyfill/ie11';
+import 'core-js/es6/weak-set';
+import 'core-js/fn/string/includes';
+import 'core-js/es6/array';
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { IntlProvider, addLocaleData } from 'react-intl';
