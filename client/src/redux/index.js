@@ -8,7 +8,7 @@ import createSagaMiddleware from 'redux-saga';
 import { createBrowserHistory } from 'history';
 
 import * as reducers from './modules';
-import rootSaga from './modules/sagas';
+// import rootSaga from './modules/sagas';
 
 export const history = createBrowserHistory();
 
@@ -46,4 +46,4 @@ const store = createStore(
 
 export default store;
 
-sagaMiddleware.run(rootSaga);
+// sagaMiddleware.run(rootSaga);
