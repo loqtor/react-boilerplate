@@ -33,13 +33,6 @@ describe('<Radio />', () => {
     expect(toJson(actual)).toMatchSnapshot();
   });
 
-  it('renders correctly when an error is present', () => {
-    const { actual } = setup(mount, { error: 'Required field' });
-
-    expect(toJson(actual)).toMatchSnapshot();
-    expect(actual.find('.Radio-error').text()).toBe('Required field');
-  });
-
   it('renders correctly when is disabled', () => {
     const { actual } = setup(mount, { isDisabled: true });
 

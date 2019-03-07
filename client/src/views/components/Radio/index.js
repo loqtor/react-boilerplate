@@ -14,11 +14,9 @@ export class Radio extends Component {
   render() {
     const {
       className,
-      error,
       id,
       isChecked,
       isDisabled,
-      isInGroup,
       isReadOnly,
       label,
       labelClassName,
@@ -44,12 +42,6 @@ export class Radio extends Component {
           />
           <span className={labelClassName}>{label}</span>
         </label>
-        {!isInGroup
-          && error && (
-            <div className="Radio-error u-pL-0">
-              <p>{error}</p>
-            </div>
-        )}
       </Fragment>
     );
   }
@@ -57,29 +49,27 @@ export class Radio extends Component {
 
 Radio.propTypes = {
   className: PropTypes.string,
-  error: PropTypes.string,
   id: PropTypes.string.isRequired,
   isChecked: PropTypes.bool,
   isDisabled: PropTypes.bool,
-  isInGroup: PropTypes.bool,
   isReadOnly: PropTypes.bool,
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
   labelClassName: PropTypes.string,
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool,
+    PropTypes.shape({}),
+  ]),
 };
 
 Radio.defaultProps = {
-  error: null,
   className: 'Radio',
   value: null,
-  name: '',
   isChecked: false,
   isDisabled: false,
   onChange: null,
-  isInGroup: false,
-  label: '',
   labelClassName: 'Radio-label',
   isReadOnly: false,
 };

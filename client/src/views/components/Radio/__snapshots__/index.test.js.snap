@@ -3,11 +3,9 @@
 exports[`<Radio /> renders correctly 1`] = `
 <Radio
   className="Radio"
-  error={null}
   id="Gender"
   isChecked={false}
   isDisabled={false}
-  isInGroup={false}
   isReadOnly={false}
   label="Gender"
   labelClassName="Radio-label"
@@ -36,63 +34,15 @@ exports[`<Radio /> renders correctly 1`] = `
       Gender
     </span>
   </label>
-</Radio>
-`;
-
-exports[`<Radio /> renders correctly when an error is present 1`] = `
-<Radio
-  className="Radio"
-  error="Required field"
-  id="Gender"
-  isChecked={false}
-  isDisabled={false}
-  isInGroup={false}
-  isReadOnly={false}
-  label="Gender"
-  labelClassName="Radio-label"
-  name="Gender"
-  onChange={[MockFunction]}
-  value="male"
->
-  <label
-    className="Radio"
-    htmlFor="Gender"
-  >
-    <input
-      checked={false}
-      className="Radio-input"
-      disabled={false}
-      id="Gender"
-      name="Gender"
-      onChange={[Function]}
-      readOnly={false}
-      type="radio"
-      value="male"
-    />
-    <span
-      className="Radio-label"
-    >
-      Gender
-    </span>
-  </label>
-  <div
-    className="Radio-error u-pL-0"
-  >
-    <p>
-      Required field
-    </p>
-  </div>
 </Radio>
 `;
 
 exports[`<Radio /> renders correctly when is disabled 1`] = `
 <Radio
   className="Radio"
-  error={null}
   id="Gender"
   isChecked={false}
   isDisabled={true}
-  isInGroup={false}
   isReadOnly={false}
   label="Gender"
   labelClassName="Radio-label"
@@ -127,11 +77,9 @@ exports[`<Radio /> renders correctly when is disabled 1`] = `
 exports[`<Radio /> renders correctly when isReadOnly 1`] = `
 <Radio
   className="Radio"
-  error={null}
   id="Gender"
   isChecked={false}
   isDisabled={false}
-  isInGroup={false}
   isReadOnly={true}
   label="Gender"
   labelClassName="Radio-label"

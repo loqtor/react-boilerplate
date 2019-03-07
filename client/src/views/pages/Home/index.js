@@ -4,6 +4,25 @@ import PropTypes from 'prop-types';
 
 import Footer from '../../connectors/Footer';
 import Header from '../../connectors/Header';
+import { RadioGroup } from '../../components/RadioGroup';
+
+const OPTIONS = [
+  {
+    id: 'option-one',
+    label: 'Option One',
+    value: 'one',
+  },
+  {
+    id: 'option-two',
+    label: 'Option Two',
+    value: 'two',
+  },
+  {
+    id: 'option-three',
+    label: 'Option Three',
+    value: 'three',
+  },
+];
 
 const HomePage = (props) => {
   const { isLoading } = props;
@@ -30,6 +49,17 @@ const HomePage = (props) => {
             nec sodales ultrices, odio nulla euismod nunc, a pharetra nisi ligula ac elit.
             Suspendisse scelerisque eu massa aliquet malesuada…
           </p>
+
+          <hr />
+          <br />
+          <p>@NOTE This will not change because there is no component state</p>
+          {/* @TODO Lilly said she would Storybook this */}
+          <RadioGroup
+            checkedValue="two"
+            onChange={() => { }}
+            name="MyRadioExample"
+            options={OPTIONS}
+          />
         </div>
       </main>
       <Footer />
