@@ -6,31 +6,27 @@ import { Radio } from '../Radio';
 /**
 
   <RadioGroup
-    checkedId={this.state.activeRadioOption}
+    checkedValue={this.state.activeRadioOption}
     onChange={this.handleRadioChange}
-    name='MyRadioExample'
+    name="MyRadioExample"
     options={[
       {
-        id: 'option-one'
-        label: 'Option One'
-        value: true
+        id: 'option-one',
+        label: 'Option One',
+        value: true,
       },
       {
-        id: 'option-two'
-        label: 'Option Two'
-        value: false
-      }
+        id: 'option-two',
+        label: 'Option Two',
+        value: false,
+      },
     ]}
   />
 
  */
 export class RadioGroup extends React.Component {
   componentDidMount() {
-    const { onChange, defaultTo, options } = this.props;
-    if (!onChange) {
-      console.error('Please supply an onChange event you monster');
-      return;
-    }
+    const { defaultTo, options } = this.props;
 
     let initialValue = defaultTo;
     if (initialValue === undefined) {
@@ -38,33 +34,39 @@ export class RadioGroup extends React.Component {
       initialValue = value;
     }
 
-    onChange(initialValue);
+    this.handleOnChange(initialValue);
   }
 
-  handleRadioChange = (e) => {
-    const { onChange, options } = this.props;
+  handleOnChange = (value) => {
+    const { onChange } = this.props;
 
     if (!onChange) {
-      console.error('Please supply an onChange event you monster');
+      // eslint-disable-next-line no-console
+      console.warn('🚨  You should consider supplying an onChange event.');
       return;
     }
+
+    onChange(value);
+  }
+
+  handleRadioChange = (event) => {
+    const { options } = this.props;
 
     const {
       target: {
         id,
         value: fallBackValue,
       },
-    } = e;
+    } = event;
 
     let value = fallBackValue;
-
-    const radioOption = options.find(o => o.id === id);
+    const radioOption = options.find(option => option.id === id);
     if (radioOption !== undefined) {
       // eslint-disable-next-line prefer-destructuring
       value = radioOption.value;
     }
 
-    onChange(value);
+    this.handleOnChange(value);
   }
 
   render() {
@@ -95,6 +97,7 @@ export class RadioGroup extends React.Component {
             />
           );
         })}
+
         {error && (
           <div className="RadioGroup-error u-pL-0">
             <p>{error}</p>
@@ -118,7 +121,11 @@ RadioGroup.propTypes = {
       id: PropTypes.string.isRequired,
       isDisabled: PropTypes.bool,
       label: PropTypes.string,
-      value: PropTypes.string,
+      value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.bool,
+        PropTypes.shape({}),
+      ]),
     }),
   ).isRequired,
 };
