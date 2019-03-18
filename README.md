@@ -21,7 +21,7 @@ _Last Updated: 4 December 2018, Lilly Kwapisz_
 
 ## Overview
 
-This README outlines the details of collaborating and working on the TVNZ Plus Web App. The project is built using [React](https://facebook.github.io/react/) and [Redux](http://redux.js.org/docs/introduction/). Below are details about principles the project follows, getting up and running on your development machine and also includes testing and deployment details.
+This README outlines the details of collaborating and working on Alphero's React Boilerplate. The project is built using [React](https://facebook.github.io/react/) and [Redux](http://redux.js.org/docs/introduction/). Below are details about principles the project follows, getting up and running on your development machine and also includes testing and deployment details.
 
 ## Build Tools and Dependencies
 
@@ -55,8 +55,8 @@ Dependency management is split between two main places:
 
 Follow the instructions below to pull down the repository.
 
-1.  `git clone https://**username**@bitbucket.org/tvnztech/cms.git`
-1.  `cd condor/condor-web/`
+1.  `git clone git@alphero.git.beanstalkapp.com:/alphero/alphero-react-boilerplate.git`
+1.  `cd alphero-react-boilerplate`
 1.  _(Might be required)_ You'll need Node 9.2+ to run this project. Run `nvm install node` and `nvm use node` to install and use the latest version of Node.
 1.  _(Might be required)_ You'll also need Yarn 1.5.1+ to run this project. Run `brew install yarn` to install the latest version of yarn.
 1.  Run `yarn install` to install dependencies required to run the API proxy server.
@@ -69,9 +69,8 @@ Once the dependencies are installed, in the main project directory, you can run:
 
 ### `yarn start`
 
-This will run the React app (i.e. the thing in client/) and the API proxy server. The proxy server is needed to bypass browser CORS restrictions and rewrite cookies.
+This will run the React app (i.e. the thing in client/) and the API proxy server. Your project may need not need the proxy server, but it can be useful for bypassing browser CORS restrictions and rewriting cookies.
 
-Runs the app in development mode.<br>
 Open [http://localhost:3002](http://localhost:3002) to view the React app.
 
 - The page will reload if you make edits.

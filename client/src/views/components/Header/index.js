@@ -24,7 +24,7 @@ export const Header = () => (
 
           <Menu />
 
-          <Button className="Header-search" title="Search" icon="search" />
+          <Button className="Header-search" title="Search" />
         </div>
       </div>
     </div>
