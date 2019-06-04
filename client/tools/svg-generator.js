@@ -2,9 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 const REPLACE_ME = 'STRING_TO_REPLACE';
-const SVG_OBJ = fs.readFileSync(path.resolve('public/assets/svg-icons/all.svg'), 'utf8');
+const SVG_OBJ = fs.readFileSync(path.resolve('./src/all.svg'), 'utf8');
 const FILE_TEMPLATE = `// NOTE: This is a generated file, nothing you do here matters
-// The source is the all.svg file located at 'public/assets/svg-icons/all.svg'
+// The source of the all.svg file is located at './src/all.svg'
 // The script that generates this file is located at tools/svg-generator.js
 // To rebuild this file run 'yarn run generate-svgs'
 import React from 'react';
@@ -36,8 +36,16 @@ function generateSVGs(destinationFile) {
       const id = line.match(/"(\w+?|-)*"/);
       const viewBox = line.match(/viewBox="(\d+| )*"/);
 
-      const svgName = id[0];
-      const svg = createSVG(svgName.replace(/"/g, ''), viewBox[0]);
+      let svgName = id[0];
+      let svg = createSVG(svgName.replace(/"/g, ''), viewBox[0]);
+
+      console.log(svgName);
+
+      // NOTE: This is to keep the linter happy when the file is created.
+      // Replace the svgName's doubleQuotes with singles
+      svgName = svgName.replace(/"/g, "'");
+      // Replace all the svg singleQuotes with doubles
+      svg = svg.replace(/'/g, '"');
 
       // eslint-disable-next-line
       codeString += `  ${svgName}: (${svg}),\n`;
@@ -50,4 +58,8 @@ function generateSVGs(destinationFile) {
   fs.writeFileSync(destinationFile, fileContent);
 }
 
-generateSVGs(path.resolve('src/tools/utilities/svg-content.js'));
+console.log('=== START running svg-generator ===');
+
+generateSVGs(path.resolve('./src/tools/utilities/svg-content.js'));
+
+console.log('=== FINISHED running svg-generator ===');
