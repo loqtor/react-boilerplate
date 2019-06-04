@@ -84,7 +84,7 @@ export class Checkbox extends Component {
 
 Checkbox.propTypes = {
   className: PropTypes.string,
-  error: PropTypes.string,
+  error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   id: PropTypes.string,
   isChecked: PropTypes.bool,
   isDisabled: PropTypes.bool,
