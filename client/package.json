@@ -55,7 +55,7 @@
     "storybook": "start-storybook -p 9009 -s public",
     "test": "react-scripts test --env=jsdom",
     "coverage": "react-scripts test --env=jsdom --coverage",
-    "generate-svgs": "echo 'CHECK THAT YOUR SVG HAS A VIEW BOX, otherwise it will not work'; rm ./src/assets/svg-icons/all.svg; svg-sprite-generate -d ./src/assets/svg-icons -o ./src/assets/svg-icons/all.svg; node ./tools/svg-generator",
+    "generate-svgs": "echo 'CHECK THAT YOUR SVG HAS A VIEW BOX, otherwise it will not work'; rm ./src/all.svg; svg-sprite-generate -d ./public/assets/svg-icons -o ./src/all.svg; node ./tools/svg-generator",
     "generate-icons": "node ./tools/icomoon-generator",
     "preversion": "CI=true yarn test",
     "version": "",

@@ -14,7 +14,8 @@ export const Icon = (props) => {
 
   if (!icon) {
     // eslint-disable-next-line
-    return console.warn(`No icon found for ${name}`);
+    console.warn(`No icon found for ${name}`);
+    return null;
   }
 
   if (isSVG) {
