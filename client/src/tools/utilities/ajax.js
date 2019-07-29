@@ -23,24 +23,6 @@ const processParams = (url, params) => {
   }, baseUrl);
 };
 
-/*
- * Yes, axios does not give an option for this. GET parameters must be included
- * as part of the URL.
- */
-const prepareGetRequest = (url, data, hasParams) => {
-  let finalUrl = hasParams ? `${url}` : `${url}?`;
-
-  data.map((datum) => {
-    if (finalUrl !== `${url}?`) {
-      finalUrl += '&';
-    }
-
-    finalUrl = `${finalUrl}${datum}=${data[datum]}`;
-
-    return finalUrl;
-  });
-};
-
 export async function makeRequest(uri, method, headers, data, params = undefined) {
   const requestMethod = method || 'get';
   const defaultHeaders = {
@@ -55,10 +37,9 @@ export async function makeRequest(uri, method, headers, data, params = undefined
 
   /** Process params object and return concatenated base URL and any params */
   const processedUrl = hasParams ? processParams(requestUrl, params) : requestUrl;
-  const finalUrl = requestMethod === 'get' ? prepareGetRequest(processedUrl, data, hasParams) : processedUrl;
 
   const response = await axios({
-    url: finalUrl,
+    url: processedUrl,
     method: requestMethod,
     headers: {
       ...defaultHeaders,
