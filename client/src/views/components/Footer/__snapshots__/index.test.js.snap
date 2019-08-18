@@ -24,7 +24,7 @@ exports[`index.test.jsx renders correctly 1`] = `
       "locale": "en-NZ",
       "messages": Object {
         "404": "The link may be broken or the page may have been removed. ",
-        "APP_TITLE": "**APP_TITLE**",
+        "APP_TITLE": "react-boilerplate",
         "BACK": "Back",
         "BY": "By ",
         "CANCEL": "Cancel",
@@ -43,7 +43,7 @@ exports[`index.test.jsx renders correctly 1`] = `
         "EMAIL": "Email",
         "FACEBOOK": "Facebook",
         "FINISH": "Finish",
-        "FOOTER_DISCLAIMER": "**APP_TITLE** © 2018 All Rights Reserved",
+        "FOOTER_DISCLAIMER": "react-boilerplate © 2018 All Rights Reserved",
         "FROM": "From",
         "FULL_NAME": "Full name",
         "GOT_IT": "Got it!",

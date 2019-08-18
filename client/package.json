@@ -1,5 +1,5 @@
 {
-  "name": "**APP_TITLE**-web",
+  "name": "react-boilerplate-web",
   "version": "0.0.2",
   "private": true,
   "dependencies": {
@@ -40,15 +40,15 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint",
-      "pre-push": "yarn lint && CI=true yarn test"
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint && CI=true npm run test"
     }
   },
   "scripts": {
     "format": "prettier-eslint --write \"./src/**/*.js\"",
     "lint": "eslint --config ./.eslintrc ./src --ext .js,.jsx",
     "build-storybook": "build-storybook -s public",
-    "build": "yarn run react-scripts build",
+    "build": "npm run run react-scripts build",
     "eject": "react-scripts eject",
     "post-yarn": "sh ../tools/yarn-scripts/yarn.sh",
     "start": "PORT=3002 react-scripts start",
@@ -57,7 +57,7 @@
     "coverage": "react-scripts test --env=jsdom --coverage",
     "generate-svgs": "echo 'CHECK THAT YOUR SVG HAS A VIEW BOX, otherwise it will not work'; rm ./src/all.svg; svg-sprite-generate -d ./public/assets/svg-icons -o ./src/all.svg; node ./tools/svg-generator",
     "generate-icons": "node ./tools/icomoon-generator",
-    "preversion": "CI=true yarn test",
+    "preversion": "CI=true npm run test",
     "version": "",
     "postversion": "git push && git push --tags"
   },
