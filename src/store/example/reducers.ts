@@ -15,4 +15,4 @@ export const example = (state = initialState, action) => {
     default:
       return state;
   }
-};
+};  
