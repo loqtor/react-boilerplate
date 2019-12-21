@@ -1,7 +1,0 @@
-{
-  "use": "autoprefixer",
-  "output": "./src/styles/styles.css",
-  "autoprefixer": {
-    "browsers": "last 2 versions"
-  }
-}
