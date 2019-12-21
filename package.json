@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
-  "name": "react-boilerplate-dev-proxy",
-  "version": "0.0.0",
-=======
   "name": "react-boilerplate",
   "version": "0.1.0",
->>>>>>> master
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -30,17 +25,10 @@
     "typescript": "^3.7.4"
   },
   "scripts": {
-<<<<<<< HEAD
-    "start": "concurrently --kill-others 'npm run start:server' 'cd client; npm run start'",
-    "install:all": "npm run install; cd client; npm run install; cd ..",
-    "start:server": "nodemon ./bin/www --ignore 'client/*'",
-    "post-yarn": "sh ./tools/yarn-scripts/yarn.sh"
-=======
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
->>>>>>> master
   },
   "eslintConfig": {
     "extends": "react-app"
