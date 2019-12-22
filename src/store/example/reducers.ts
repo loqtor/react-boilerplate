@@ -4,7 +4,7 @@ const initialState = {
   text: '',
 };
 
-export const example = (state = initialState, action) => {
+export const example = (state = initialState, action: { payload: any, type: any}) => {
   switch (action.type) {
     case EXAMPLE: 
       return {
