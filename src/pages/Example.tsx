@@ -45,7 +45,6 @@ function mapStateToProps(state: RootState): StateProps {
 function mapDispatchToProps(dispatch: Redux.Dispatch<any>): DispatchProps {
   return {
     countClick: () => {
-      debugger;
       return dispatch(countClick())
     },
   };
