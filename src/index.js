@@ -5,17 +5,18 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga'
 import { Provider } from 'react-redux'
-import { RootReducer } from "./store/index";
+import { RootReducer } from "./store/reducers";
 
-import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 import { Home } from '../src/pages/Home';
 import { Example } from '../src/pages/Example';
 
-export const store = createStore(RootReducer);
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(RootReducer, applyMiddleware(sagaMiddleware));
 
 ReactDOM.render(
   <Provider store={store}>
