@@ -1,4 +1,4 @@
-import { EXAMPLE } from "./actions";
+import { EXAMPLE } from "../actions/actions";
 
 const initialState = {
   text: '',

@@ -5,6 +5,9 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import { createStore } from 'redux';
+import { Provider } from 'react-redux'
+import { app } from "./store";
 
 import './index.css';
 import * as serviceWorker from './serviceWorker';
@@ -12,13 +15,17 @@ import * as serviceWorker from './serviceWorker';
 import { Home } from '../src/pages/Home';
 import { Example } from '../src/pages/Example';
 
+export const store = createStore(app);
+
 ReactDOM.render(
-  <Router>
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/example" component={Example} />
-    </Switch>
-  </Router>
+  <Provider store={store}>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/example" component={Example} />
+      </Switch>
+    </Router>
+  </Provider>
   , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
