@@ -15,7 +15,7 @@ import { Example } from '../src/pages/Example';
 ReactDOM.render(
   <Router>
     <Switch>
-      <Route path="/" component={Home} />
+      <Route exact path="/" component={Home} />
       <Route path="/example" component={Example} />
     </Switch>
   </Router>
