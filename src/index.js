@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { createStore } from 'redux';
 import { Provider } from 'react-redux'
-import { app } from "./store";
+import { RootReducer } from "./store/index";
 
 import './index.css';
 import * as serviceWorker from './serviceWorker';
@@ -15,7 +15,7 @@ import * as serviceWorker from './serviceWorker';
 import { Home } from '../src/pages/Home';
 import { Example } from '../src/pages/Example';
 
-export const store = createStore(app);
+export const store = createStore(RootReducer);
 
 ReactDOM.render(
   <Provider store={store}>

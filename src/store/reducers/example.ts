@@ -1,15 +1,19 @@
-import { EXAMPLE } from "../actions/actions";
+import { EXAMPLE_TYPES } from "../actions/example";
 
-const initialState = {
-  text: '',
+export type ExampleState = {
+  clickCount: number;
+}
+
+const initialState: ExampleState = {
+  clickCount: 0,
 };
 
 export const example = (state = initialState, action: { payload: any, type: any}) => {
   switch (action.type) {
-    case EXAMPLE: 
+    case EXAMPLE_TYPES.COUNT_CLICK: 
       return {
         ...state,
-        text: action.payload.text,
+        clickCount: state.clickCount + 1,
       };
 
     default:
