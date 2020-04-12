@@ -1,13 +1,13 @@
 import * as React from 'react';
 import * as Redux from 'redux';
 
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
-import { getClickCount } from "../store/selectors/example";
-import { countClick } from "../store/actions/example";
+import { getClickCount } from 'store/selectors/example';
+import { countClick } from 'store/actions/example';
 
 import { Link } from 'react-router-dom';
-import { RootState } from '../store/reducers';
+import { RootState } from 'store/reducers';
 
 export interface OwnProps {}
 
